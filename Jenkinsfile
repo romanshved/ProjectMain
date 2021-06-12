@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build'
-                archiveArtifacts artifacts: 'dist/index.zip'
+                archiveArtifacts artifacts: 'index.html'
             }
         }
         stage('DeployToStaging') {
@@ -25,7 +25,7 @@ pipeline {
                                 ], 
                                 transfers: [
                                     sshTransfer(
-                                        sourceFiles: 'dist/index.zip',
+                                        sourceFiles: 'dist/index.html',
                                         removePrefix: 'dist/',
                                         remoteDirectory: '/tmp',
                                         execCommand: 'sudo /usr/bin/systemctl stop index && rm -rf /opt/index/* && unzip /tmp/index.zip -d /opt/index && sudo /usr/bin/systemctl start index'
