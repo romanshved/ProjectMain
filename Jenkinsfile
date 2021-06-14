@@ -25,7 +25,7 @@ pipeline {
                                         sourceFiles: 'dist/index.zip',
                                         removePrefix: 'dist/',
                                         remoteDirectory: '/tmp',
-                                        execCommand: 'sudo scp - v -o StrictHostKeyChecking=no index.html ubuntu@ec2-3-64-114-249.eu-central-1.compute.amazonaws.com:/var/www/html && sh exit=0'
+                                        execCommand: 'sudo rm -rf /var/www/temp_deploy/dist/ && sudo mkdir -p /var/www/temp_deploy && scp -r dist ubuntu@ec2-3-64-114-249.eu-central-1.compute.amazonaws.com:/var/www/temp_deploy/dist/ && sudo rm -rf /var/www/index.html/dist/ && sudo mv /var/www/temp_deploy/dist/ /var/www/index.html/'
                                     )
                                 ]
                             )
