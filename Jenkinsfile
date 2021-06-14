@@ -30,7 +30,7 @@ pipeline {
                                         sourceFiles: 'dist/index.zip',
                                         removePrefix: 'dist/',
                                         remoteDirectory: '/tmp',
-                                        execCommand: 'sudo /usr/bin/systemctl stop index && rm -rf /opt/index/* && unzip /tmp/index.zip -d /opt/train-schedule && sudo /usr/bin/systemctl start index'
+                                        execCommand: 'sudo rm -rf /opt/index/* && unzip /tmp/index.zip -d /opt/index && sudo /usr/bin/systemctl start index'
                                     )
                                 ]
                             )
