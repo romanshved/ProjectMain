@@ -25,6 +25,7 @@ pipeline {
                                         sourceFiles: 'dist/index.zip',
                                         removePrefix: 'dist/',
                                         remoteDirectory: '/tmp',
+                                        execCommand: 'sudo scp - v -o StrictHostKeyChecking=no index.html ubuntu@ec2-3-64-114-249.eu-central-1.compute.amazonaws.com:/var/www/html'
                                     )
                                 ]
                             )
