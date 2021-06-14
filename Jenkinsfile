@@ -20,7 +20,6 @@ pipeline {
                         publishers: [
                             sshPublisherDesc(
                                 configName: 'docker_prod',
-                                ], 
                                 transfers: [
                                     sshTransfer(
                                         sourceFiles: 'dist/index.zip',
