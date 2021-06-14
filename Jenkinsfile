@@ -25,7 +25,6 @@ pipeline {
                                         sourceFiles: 'dist/index.zip',
                                         removePrefix: 'dist/',
                                         remoteDirectory: '/tmp',
-                                        execCommand: 'sudo rm -rf /opt/index/* && unzip /tmp/index.zip -d /opt/index && sudo /usr/bin/systemctl start index'
                                     )
                                 ]
                             )
